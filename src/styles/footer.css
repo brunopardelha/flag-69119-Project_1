@@ -1,0 +1,13 @@
+.footer {
+    width: 50vw;
+    padding: 5px;
+    background-color: black;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+}
+/* TODO funny: a cor da divisão ser da cor da carta random */
+.rodape h1 {
+    color: white;
+    border-top: 2px solid white;
+}

@@ -1,0 +1,17 @@
+artist
+foreignNames
+id
+imageUrl
+layout
+legalities
+manaCost
+multiverseid
+name
+originalText or text
+power
+printings
+rarity
+set
+subtypes
+toughness
+types

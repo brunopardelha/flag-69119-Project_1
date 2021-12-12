@@ -1,0 +1,12 @@
+.container {
+    width: 75vw;
+    margin: 15px auto;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
