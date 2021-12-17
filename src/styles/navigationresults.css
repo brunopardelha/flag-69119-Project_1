@@ -1,0 +1,13 @@
+.navigation {
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.navigation button {
+    border-radius: 25px;
+    font-size: 80%;
+    padding: 5px;
+}

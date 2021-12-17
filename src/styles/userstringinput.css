@@ -1,0 +1,7 @@
+input {
+    width: 30vw;
+    height: 50px;
+    border-radius: 4px;
+    font-size: x-large;
+    line-height: 3vh;
+}

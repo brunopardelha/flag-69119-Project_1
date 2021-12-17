@@ -2,52 +2,13 @@
     color:white;
 }
 
-.searchinputs button {
-    margin: 5px;
-    padding: 2px;
-    border-radius: 10px;
-}
-
-.searchinputs input {
-    width: 35vw;
-}
-
-.main button {
-    margin: 5px;
-    padding: 2px;
-    border-radius: 10px;
-    height: 50px;
-}
-
-.main select {
-    margin: 5px;
-    padding: 2px;
-    border-radius: 10px;
-    height: 50px;
-
-}
-
-.main input {
-    width: 35vw;
-    height: 50px;
-    border-radius: 4px;
-}
-
 .main > * {
     font-size: x-large;
     line-height: 3vh;
     
 }
 
-.results {
-    color:white;
-}
-
-.results ul {
-    list-style-type: none;
-    
-}
-
 .split {
+    width: 100%;
     margin: 20px;
 }

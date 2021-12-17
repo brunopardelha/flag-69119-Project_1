@@ -1,3 +1,5 @@
+import '../styles/selectsearchparameter.css'
+
 const SelectSearchParameter = (props) => {
 
     const searchParameter = [
@@ -24,8 +26,6 @@ const SelectSearchParameter = (props) => {
         >
             {renderSearchParameter}
         </select>
-
-
 
     )
 

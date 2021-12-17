@@ -23,5 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # personal
-/old
-/mock_data
+/src/old
+/src//mock_data
+

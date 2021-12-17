@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+
+/* // variables */
+:root 
+  { --card-width:  223px;
+    --card-height: 350px;
+    --h-color:     #9CC9E3;
+    --yellow:      #D0BB57;
+    --txt-color:   #DCE3E7;
+  }
+
+body{
+  background: #323c41;
+}
+
+.results {
+  display:flex;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.results ul {
+  list-style-type: none;
+}
+
+.info-results {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}

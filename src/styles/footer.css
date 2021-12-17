@@ -6,8 +6,11 @@
     text-align: center;
     color: white;
 }
+
+.footer a {
+    color: rgb(118, 133, 194);
+}
 /* TODO funny: a cor da divisão ser da cor da carta random */
 .rodape h1 {
     color: white;
-    border-top: 2px solid white;
 }

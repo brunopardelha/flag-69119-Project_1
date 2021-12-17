@@ -1,5 +1,11 @@
 const mtg = require('mtgsdk');
 
+// axios.interceptors.response.use(function (response) {
+//     console.log(response.headers.link);
+//     console.log(response.data);
+//     return response.data
+// })
+
 export function OneCard() {
     const max = 4980;
 
@@ -15,33 +21,33 @@ export function One() {
 
 export function SearchByName(userInput = 'sardia') {
     return mtg.card.where({ name: userInput })
-        .then(cards => cards.forEach((element) => console.log(element.name) ))
-        
+        .then(cards => cards.forEach((element) => console.log(element.name)))
+
 }
 
 export function SearchByPower(userInput = '9') {
     return mtg.card.where({ power: userInput })
-        .then(cards => cards.forEach((element) => console.log(element.power) ))
+        .then(cards => cards.forEach((element) => console.log(element.power)))
 }
 
 export function SearchByRarity(userInput = 'Rare') {
     return mtg.card.where({ rarity: userInput })
-        .then(cards => cards.forEach((element) => console.log(element.rarity) ))
+        .then(cards => cards.forEach((element) => console.log(element.rarity)))
 }
 
 export function SearchByToughness(userInput = '9') {
     return mtg.card.where({ toughness: userInput })
-        .then(cards => cards.forEach((element) => console.log(element.toughness) ))
+        .then(cards => cards.forEach((element) => console.log(element.toughness)))
 }
 
-export function SearchByColor(userInput= 'red') {
+export function SearchByColor(userInput = 'red') {
     return mtg.card.where({ colors: userInput })
-        .then(cards => cards.forEach((element) => console.log(element.colors) ))
+        .then(cards => cards.forEach((element) => console.log(element.colors)))
 }
 
 export function SearchByType(userInput = 'Creature') {
     return mtg.card.where({ type: userInput })
-        .then(cards => cards.forEach((element) => console.log(element.type) ))
+        .then(cards => cards.forEach((element) => console.log(element.type)))
 }
 
 // TODO utilizar o SDK para a API ou então o axios para função com 2 parametros
@@ -51,8 +57,12 @@ export function Search(tipo, userInput) {
     return (fetch(baseUrl + tipo.toLowerCase() + '=' + userInput.toLowerCase())
         .then(res => res.json())
         .then(json => json.cards)
-        // .then(res => res.forEach(element => {console.log(element)})) 
-    )}
+    )
+}
+
+
+
+
 
 // Get all cards
 // mtg.card.all()

@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const mtg = require('mtgsdk');
 
 export function OneCard() {
@@ -9,5 +11,15 @@ export function OneCard() {
 }
 
 export function One() {
-    return (fetch('https://api.magicthegathering.io/v1/cards/3020').then(res => res.json()))
+    return (fetch('https://api.magicthegathering.io/v1/cards/3020')
+        .then(res => {
+            console.log(res.headers);
+            res.json();
+        }))
+}
+
+// const baseUrl = 'https://api.magicthegathering.io/v1/cards?page=4'
+export function AxiosSearch(tipo, userInput) {
+    const baseUrl = 'https://api.magicthegathering.io/v1/cards/?'
+    return (axios.get(baseUrl + tipo.toLowerCase() + '=' + userInput.toLowerCase()))
 }
