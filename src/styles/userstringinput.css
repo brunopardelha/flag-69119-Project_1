@@ -1,7 +1,8 @@
 input {
-    width: 30vw;
+    width: 25vw;
     height: 50px;
     border-radius: 4px;
     font-size: x-large;
     line-height: 3vh;
+
 }

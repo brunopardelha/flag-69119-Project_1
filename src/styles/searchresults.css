@@ -2,13 +2,13 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
 
 /* // variables */
-:root 
+/* :root 
   { --card-width:  223px;
     --card-height: 350px;
     --h-color:     #9CC9E3;
     --yellow:      #D0BB57;
     --txt-color:   #DCE3E7;
-  }
+  } */
 
 body{
   background: #323c41;
@@ -22,10 +22,6 @@ body{
   justify-content: center;
   align-items: center;
   align-content: center;
-}
-
-.results ul {
-  list-style-type: none;
 }
 
 .info-results {

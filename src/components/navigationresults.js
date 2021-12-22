@@ -4,9 +4,9 @@ const Navigationresults = (props) => {
     //provavelmente a string para trabalhar os botões
     // console.log(props);
     
-    const buttons = props.navigation.map((button) => {
+    const buttons = props.navigation.map((button, index) => {
         return (
-            <button type='button' onClick={() => console.log('cliked ' + button)}>{button}</button>
+            <button type='button' key={index} onClick={() => console.log('cliked ' + button)}>{button.charAt(0).toUpperCase()+button.slice(1)}</button>
         )
     })
 
@@ -15,7 +15,6 @@ const Navigationresults = (props) => {
             {buttons}
         </div>
     )
-
 };
 
 export default Navigationresults;

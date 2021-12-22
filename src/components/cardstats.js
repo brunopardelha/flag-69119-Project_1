@@ -49,16 +49,6 @@ const Cardstats = (props) => {
 
     return (
         <ul className="card-stats">{teste}</ul>
-        // <ul className="card-stats">
-        //     <li> Artist: {short.artist} </li>
-        //     <li> Color: {short.colors} </li>
-        //     <li> Mana Cost: {short.manaCost} </li>
-        //     <li> Set: {short.setName} ({short.set}) </li>
-        //     <li> Text: {short.text} </li>
-        //     <li> Types: {short.types} </li>
-        //     <li> Power / Toughness: {short.power}/ {short.toughness}</li>
-        //     <li> Quote: {short.flavor} </li>
-        // </ul>
     )
 }
 

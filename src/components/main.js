@@ -18,19 +18,18 @@ const Main = () => {
 
     const [userQuery, setUserQuery] = useState(inicialState);
 
-    // let [nextNavigationLinks, setNextNavigationLinks] = useState('');
-    let links = [];
-    let pages = [];
+    const [links, setLinks] = useState([]);
+    const [pages, setPages] = useState([]);
 
     // const [numberNoImageResults, setNumberNoImageResults] = useState(0);
     let numberNoImageResults = 0;
 
     async function pagination(response) {
-        // setNextNavigationLinks({ nextNavigationLinks: response.headers.link });
-        links = headersToLinks(response.headers.link);
-        pages = headersToPages(response.headers.link);
+        setLinks(headersToLinks(response.headers.link));
+        setPages(headersToPages(response.headers.link));
         // console.log(pages);
         // console.log(pages.length);
+        setResult(response.data.cards);
     }
 
     function onChangeByUser(props) {
@@ -42,7 +41,6 @@ const Main = () => {
         AxiosSearch(userQuery.funcao, userQuery.user)
             .then(response => {
                 pagination(response);
-                setResult(response.data.cards);
             })
     }
 
