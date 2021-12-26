@@ -5,7 +5,9 @@ import SelectSearchParameter from './SelectSearchParameter';
 import SearchResults from './searchresults';
 import Userstringinput from './userstringinput';
 import Christmasbutton from './christmasbutton';
-import { headersToLinks,headersToPages } from '../services/helper'
+import { headersToLinks, headersToPages } from '../services/helper'
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+
 
 const Main = () => {
 
@@ -21,10 +23,11 @@ const Main = () => {
     const [links, setLinks] = useState([]);
     const [pages, setPages] = useState([]);
 
-    // const [numberNoImageResults, setNumberNoImageResults] = useState(0);
+    // let [numberNoImageResults, setNumberNoImageResults] = useState(0);
     let numberNoImageResults = 0;
 
     async function pagination(response) {
+        // console.log('cheguei...outra vez?',response)
         setLinks(headersToLinks(response.headers.link));
         setPages(headersToPages(response.headers.link));
         // console.log(pages);
@@ -47,22 +50,28 @@ const Main = () => {
     function clearNoImageResults(array) {
         const filterResult = array.filter((carta) => carta.imageUrl !== undefined);
         numberNoImageResults = (array.length - filterResult.length);
-        // setNumberNoImageResults(array.length - filterResult.length); // provoca um loop de render, estoira
+        //setNumberNoImageResults(array.length - filterResult.length); // provoca um loop de render, estoira
         return filterResult;
 
     }
     //TODO fazer um componente para o main?! diminuia os hooks neste componente - passa para esse
     return (
-        <>
-            <div className="main">
-                <h1>Search card by:</h1>
-                <Userstringinput data={userQuery.user} ChangeMe={onChangeByUser} />
-                <SelectSearchParameter ChangeMe={onChangeByUser} />
-                <Christmasbutton ChangeMe={santaClaus} />
-            </div>
-            <hr className="split" />
-            {result.length > 0 && <SearchResults output={clearNoImageResults(result)} number={numberNoImageResults} pages={pages} links={links} />}
-        </>
+        <BrowserRouter>
+            {/* <Routes> */}
+                {/* <Route path="/" element={ */}
+                    <div className="main">
+                        <h1>Search card by:</h1>
+                        <Userstringinput data={userQuery.user} ChangeMe={onChangeByUser} />
+                        <SelectSearchParameter ChangeMe={onChangeByUser} />
+                        <Christmasbutton ClickMe={santaClaus} />
+                    </div>
+                {/* } */}
+                {/* /> */}
+                {/* <Route path="searchresults" element= */}
+                    {result.length > 0 && <SearchResults output={clearNoImageResults(result)} number={numberNoImageResults} pages={pages} links={links} up={pagination}/>}
+                {/* /> */}
+            {/* </Routes> */}
+        </BrowserRouter>
     )
 };
 

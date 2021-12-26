@@ -10,6 +10,10 @@ export function OneCard() {
     return (mtg.card.find(random))
 }
 
+export function CardByRequest(link) {
+    return (axios.get(link))
+}
+
 export function One() {
     return (fetch('https://api.magicthegathering.io/v1/cards/3020')
         .then(res => {

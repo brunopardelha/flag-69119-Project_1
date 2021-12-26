@@ -19,16 +19,18 @@ const SearchResults = (props) => {
     }
 
     function newPage(link) {
-        CardByRequest(link)
-        .then(res => {
-            props.up(res);
-            // console.log(res.headers.link);
-            // console.log(res.data.cards);
-            setToView(res.data.cards)
-            })
-    }
+        // console.log(link.headers);
+        // console.log(link.data.cards);
+        setToView(link.data.cards)
 
-    function upComponent(response) {
+
+        // CardByRequest(link)
+        //     .then(res => {
+        //         console.log(res.headers);
+        //         console.log(res.data.cards);
+        //         setToView(res.data.cards)
+        //     })
+
     }
 
     return (

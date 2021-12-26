@@ -5,7 +5,7 @@ export function headersToPages(string) {
     headerSplit.forEach((line) => {
         pages.push(line.slice(line.search(';') + 7, line.indexOf(' " ')))
     })
-    console.log(pages);
+    // console.log(pages);
     return pages;
 }
 
@@ -15,26 +15,13 @@ export function headersToLinks(string) {
     headerSplit.forEach((line) => {
         links.push(line.trim().slice(0, line.search(';')))
     })
-    console.log(links);
-    return links;
+    // console.log(links);
+    return (links.map(element => element.slice(1,element.indexOf('>'))));
 }
 
 const parseHeaders = [
     headersToLinks,
     headersToPages
 ]
-
-//---- para os links
-// console.log(string);
-// const short = string.split(',')[1].split(';')[0].trim();
-// console.log(short.substring(1, short.length - 1));
-// return (short.substring(1, short.length - 1))
-
-//---- para as pages
-// console.log(string);
-// const short = string.split(',')[1].split(';')[1].trim().substring(5);
-// const final = short.search('"');
-// // console.log(short.substring(0, final));
-// return (short.substring(0, final))
 
 export default parseHeaders;

@@ -3,7 +3,8 @@
 }
 
 .footer {
-    width: 50vw;
+    width: 75vw;
+    margin-top: 20px;
     padding: 5px;
     background-color: black;
     border-radius: 25px;

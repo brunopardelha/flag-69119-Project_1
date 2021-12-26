@@ -2,7 +2,7 @@ import '../styles/footer.css'
 
 const Footer = () => {
     return (
-        <div className="container rodape">
+        <div className="rodape">
             <div className="footer">
                 <h1>Copyright &copy; 2021</h1>
                 <h2>by Bruno Pardelha</h2>

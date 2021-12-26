@@ -7,7 +7,7 @@ const Christmasbutton = (props) => {
             type="submit"
             className="button"
             onClick={() => {
-                props.ChangeMe();
+                props.ClickMe();
             }}
         >Presents
         </button>
