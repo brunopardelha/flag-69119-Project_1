@@ -24,5 +24,6 @@ yarn-error.log*
 
 # personal
 /src/old
-/src//mock_data
+/src/mock_data
+init.bat
 

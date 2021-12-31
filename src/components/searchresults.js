@@ -1,39 +1,39 @@
-import '../styles/searchresults.css'
-import RenderCards from './rendercards';
-import Navigationresults from './navigationresults'
-import Warning from './warning';
-import Filterresults from './filterresults'
+import '../styles/searchresults.css';
+
 import { useState } from 'react';
-import { CardByRequest } from '../services/magic'
+import { Outlet } from "react-router-dom";
+
+import RenderCards from './rendercards';
+import Navigationresults from './navigationresults';
+import Warning from './warning';
+import Filterresults from './filterresults';
+import { CardByRequest } from '../api/mtg';
+
 
 
 const SearchResults = (props) => {
 
     const [toView, setToView] = useState(props.output)
 
-    //FIXME ao fazer nova procura, não aparecem as ilustrações pois é preciso inicializar novamente o input da pesquisa
-    //talvez porque não diferencio ou porque não tenho um valor default
-
     function filterResults(string) {
-        setToView(props.output.filter((carta) => carta.name.toLowerCase().includes(string.toLowerCase())))
+        if (string) {
+            setToView(props.output.filter((carta) => carta.name.toLowerCase().includes(string.toLowerCase())))
+        } else {
+            setToView(props.output)
+        }
     }
 
     function newPage(link) {
         CardByRequest(link)
-        .then(res => {
-            props.up(res);
-            // console.log(res.headers.link);
-            // console.log(res.data.cards);
-            setToView(res.data.cards)
+            .then(res => {
+                props.up(res);
+                setToView(res.data.cards)
             })
-    }
-
-    function upComponent(response) {
     }
 
     return (
         <>
-            <hr className="split" />
+            <Outlet />
             <div className="results">
                 <div className='info-results'>
                     <Filterresults changeMe={filterResults} />
@@ -44,7 +44,6 @@ const SearchResults = (props) => {
             </div>
         </>
     )
-
 };
 
 export default SearchResults;

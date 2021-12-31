@@ -1,12 +1,12 @@
-.main {
+.user-input {
   font-family: 'Gochi Hand', cursive;
 }
 
-.main h1{
+.user-input h1{
     color:white;
 }
 
-.main > * {
+.user-input > * {
     font-size: x-large;
     line-height: 3vh;
     

@@ -20,7 +20,6 @@
     content: "";	 
     top: 5vw;
     left: 0;
-    /* right: 0; */
     z-index: -1;
     height: 100%;
     width: 100%;
@@ -32,7 +31,7 @@
     filter: blur(5vw);
     background-size: 200% 200%;
     animation: animateGlow 10s ease infinite;
-    background: linear-gradient(270deg, #0fffc1, #7e0fff);
+    background: linear-gradient(270deg, var(--color-1), var(--color-2));
 }
 
 .row {
@@ -77,12 +76,12 @@
 }
 @keyframes textColor {
     0% {
-        color: #7e0fff;
+        color: var(--color-2);
    }
     50% {
-        color: #0fffc1;
+        color: var(--color-1);
    }
     100% {
-        color: #7e0fff;
+        color: var(--color-2);
    }
 }

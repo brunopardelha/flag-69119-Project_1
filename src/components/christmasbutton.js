@@ -1,16 +1,18 @@
 import '../styles/christmasbutton.css';
 
+import { Link } from 'react-router-dom';
+
 const Christmasbutton = (props) => {
 
     return (
-        <button
-            type="submit"
+        <Link
+            to='/searchresults'
             className="button"
             onClick={() => {
                 props.ClickMe();
             }}
         >Presents
-        </button>
+        </Link>
     )
 };
 

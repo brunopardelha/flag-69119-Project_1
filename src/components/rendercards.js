@@ -1,17 +1,13 @@
 import '../styles/rendercards.css'
+
+import { Link } from 'react-router-dom';
+
 import Cardstats from './cardstats';
 
-// import Loading from './loading';
-// import { useEffect, useState } from 'react';
-
 const RenderCards = (props) => {
-    //FIXME corrigir o ecrã de loading
-    // const [temResposta, setTemResposta] = useState(true);
-
-    // input de objects cards com resultados num array
-    const card = props.output.map(carta => {
+    const card = props.output.map((carta, index) => {
         return (
-            <a href={carta.imageUrl} target="_blank" rel="noreferrer" key={carta.id}>
+            <Link to={`/searchresults/${index}`} key={carta.id}>
                 <div
                     style={{ backgroundImage: `url(${carta.imageUrl})` }}
                     className="blog-card spring-fever"
@@ -25,15 +21,13 @@ const RenderCards = (props) => {
                     <div className="gradient-overlay"></div>
                     <div className="color-overlay"></div>
                 </div>
-            </a>
-
+            </Link>
         )
     });
 
     return (
         <div className='search_container'>
             {card}
-            {/* {!temResposta ? <Loading /> : { card }} */}
         </div>
     )
 }

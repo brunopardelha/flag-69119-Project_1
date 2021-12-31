@@ -15,7 +15,6 @@ const SelectSearchParameter = (props) => {
         return (<option value={parameter} key={parameter}>{parameter}</option>)
     });
 
-
     return (
         <select
             name="funcao"
@@ -26,9 +25,7 @@ const SelectSearchParameter = (props) => {
         >
             {renderSearchParameter}
         </select>
-
     )
-
 };
 
 export default SelectSearchParameter;

@@ -1,11 +1,9 @@
-
 export function headersToPages(string) {
     const headerSplit = string.trim().split(/,/g)
     const pages = []; //array
     headerSplit.forEach((line) => {
         pages.push(line.slice(line.search(';') + 7, line.indexOf(' " ')))
     })
-    // console.log(pages);
     return pages;
 }
 
@@ -15,7 +13,6 @@ export function headersToLinks(string) {
     headerSplit.forEach((line) => {
         links.push(line.trim().slice(0, line.search(';')))
     })
-    // console.log(links);
     return (links.map(element => element.slice(1,element.indexOf('>'))));
 }
 

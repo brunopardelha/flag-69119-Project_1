@@ -1,38 +1,34 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import '../styles/carousel.css'
 
-const Carousel = () => {
-    //a tag <a> da carta substituir por Link do router
-    return (
-        <>
-            <h1>Teste para o carousel</h1>
-            <div class="carousel-wrapper">
-                <span id="item-1"></span>
-                <span id="item-2"></span>
-                <span id="item-3"></span>
-                <div class="carousel-item item-1">
-                    <h2>Item 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus   accumsan pretium dolor vel convallis. Aliquam erat volutpat. Maecenas lacus nunc, imperdiet sed mi et, finibus suscipit mi.</p>
-                    <a class="arrow arrow-prev" href="#item-3"></a>
-                    <a class="arrow arrow-next" href="#item-2"></a>
-                </div>
+import { Carousel, onChange, onClickThumb } from 'react-responsive-carousel';
 
-                <div class="carousel-item item-2">
-                    <h2>Item 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan pretium dolor vel convallis. Aliquam erat volutpat.</p>
-                    <a class="arrow arrow-prev" href="#item-1"></a>
-                    <a class="arrow arrow-next" href="#item-3"></a>
-                </div>
+import Cardstats from './cardstats';
+import Previousbutton from "./previousbutton";
 
-                <div class="carousel-item item-3">
-                    <h2>Item 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan pretium dolor vel convallis. Aliquam erat volutpat.</p>
-                    <a class="arrow arrow-prev" href="#item-2"></a>
-                    <a class="arrow arrow-next" href="#item-1"></a>
+const Player = (props) => {
+
+    const view = props.output.map((one) => {
+
+        return (
+            <div key={one.id}>
+                <img src={one.imageUrl} alt="alter" />
+                <div style={{ color: "white" }}>
+                    <Cardstats data={one} key={one.id} />
                 </div>
             </div>
+        );
+    })
+
+    return (
+        <>
+            <Previousbutton />
+            <Carousel showArrows={true} useKeyboardArrows={true} infiniteLoop={true} autoPlay={false} onChange={onChange} onClickThumb={onClickThumb}>
+                {view}
+            </Carousel>
         </>
     )
 
 };
 
-export default Carousel;
+export default Player;

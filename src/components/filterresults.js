@@ -7,7 +7,6 @@ const Filterresults = (props) => {
             placeholder="Filter results (name only)"
             onChange={(e) => {
                 props.changeMe(e.target.value)
-                // console.log(e.target.value)
             }
             } 
         />
