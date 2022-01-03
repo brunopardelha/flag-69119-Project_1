@@ -6,13 +6,7 @@ const Footer = () => {
             <div className="footer">
                 <h1>Copyright &copy; 2021</h1>
                 <h2>by Bruno Pardelha</h2>
-                <p> 
-                    <a
-                        href="https://magic.wizards.com/en"
-                        target="_blank"
-                        rel="noreferrer"
-                    > +info on the game (Magic Gathering) </a>
-                </p>
+                <h3>Provided by<a href="https://magicthegathering.io/" target="_blank" rel='noreferrer'>magicthegathering.io</a></h3>
             </div>
         </div>
     )

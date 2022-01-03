@@ -1,7 +1,6 @@
 import '../styles/searchresults.css';
 
 import { useState } from 'react';
-import { Outlet } from "react-router-dom";
 
 import RenderCards from './rendercards';
 import Navigationresults from './navigationresults';
@@ -33,7 +32,6 @@ const SearchResults = (props) => {
 
     return (
         <>
-            <Outlet />
             <div className="results">
                 <div className='info-results'>
                     <Filterresults changeMe={filterResults} />

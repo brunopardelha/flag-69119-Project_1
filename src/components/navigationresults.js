@@ -19,6 +19,7 @@ const Navigationresults = (props) => {
     return (
         <div className="navigation">
             {buttons}
+            <button type="button"><a href='#top'>Top</a></button>
         </div>
     )
 };

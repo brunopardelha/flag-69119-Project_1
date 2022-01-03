@@ -7,7 +7,7 @@ import Cardstats from './cardstats';
 const RenderCards = (props) => {
     const card = props.output.map((carta, index) => {
         return (
-            <Link to={`/searchresults/${index}`} key={carta.id}>
+            <Link to={`/carddetail/${index}`} key={carta.id}>
                 <div
                     style={{ backgroundImage: `url(${carta.imageUrl})` }}
                     className="blog-card spring-fever"

@@ -3,7 +3,15 @@ import logo from '../img/kisspng-magic-the-gathering-online-dungeons-dragons-wiz
 
 const TopBanner = () => {
     return (
-        <img src={logo} alt="logo wizards of the coast"/>
+        <a
+            href="https://magic.wizards.com/en"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <img src={logo} alt="logo wizards of the coast" />
+        </a>
+
+
     )
 }
 
