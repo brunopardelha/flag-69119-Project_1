@@ -1,7 +1,7 @@
 import '../styles/main.css';
 
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 
 import SelectSearchParameter from './SelectSearchParameter';
 import SearchResults from './searchresults';
@@ -80,7 +80,8 @@ const Main = () => {
                 </Route>
                 <Route path="/searchresults" element=
                     {result.length > 0 && <SearchResults output={clearNoImageResults(result)} number={numberNoImageResults} pages={pages} links={links} up={pagination} />}
-                >
+                />
+                <Route path="/carddetail" element={<Outlet />} >
                     <Route path=":cardId" element={<Player output={clearNoImageResults(result)} />} />
                 </Route>
                 <Route path="*" element={<h1>I got nothing! And you?!</h1>} />

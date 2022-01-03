@@ -5,6 +5,7 @@ const Userstringinput = (props) => {
     return(
         <input
             type="text"
+            id='top'
             placeholder="Search parameter"
             name="user"
             value={props.data}

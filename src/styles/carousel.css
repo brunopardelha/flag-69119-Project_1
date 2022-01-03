@@ -35,3 +35,18 @@
   justify-content: space-around;
   margin-top: 30px;
 }
+
+.carousel .control-dots {
+  margin: 5px 0;
+  margin-left: 45px;
+  width: 90%;
+}
+
+.carousel .carousel-status {
+  top: 10px;
+  right: 60px;
+}
+
+.carousel .thumbs {
+  text-align: center;
+}
