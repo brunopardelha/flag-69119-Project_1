@@ -1,15 +1,15 @@
-import '../styles/main.css';
+import '../styles/Main/main.css'
 
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 
-import SelectSearchParameter from './SelectSearchParameter';
-import SearchResults from './searchresults';
-import Userstringinput from './userstringinput';
-import Christmasbutton from './christmasbutton';
-import Player from './carousel'
-import Loading from './loading'
-import Renderonecard from './renderonecard';
+import SelectSearchParameter from './Main/User-input/SelectSearchParameter';
+import SearchResults from './Main/SearchResults/searchresults';
+import Userstringinput from './Main/User-input/userstringinput';
+import Christmasbutton from './Main/User-input/christmasbutton';
+import Player from './Main/Player/carousel';
+import Loading from './Main/Loading/loading';
+import Renderonecard from './Main/Renderonecard/renderonecard';
 
 import { AxiosSearch, OneCard } from '../api/mtg';
 import { headersToLinks, headersToPages } from '../services/helper'
