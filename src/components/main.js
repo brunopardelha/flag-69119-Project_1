@@ -7,7 +7,7 @@ import SelectSearchParameter from './Main/User-input/SelectSearchParameter';
 import SearchResults from './Main/SearchResults/searchresults';
 import Userstringinput from './Main/User-input/userstringinput';
 import Christmasbutton from './Main/User-input/christmasbutton';
-import Player from './Main/Player/carousel';
+import Carousel from './Main/Player/carousel';
 import Loading from './Main/Loading/loading';
 import Renderonecard from './Main/Renderonecard/renderonecard';
 
@@ -82,7 +82,7 @@ const Main = () => {
                     {result.length > 0 && <SearchResults output={clearNoImageResults(result)} number={numberNoImageResults} pages={pages} links={links} up={pagination} />}
                 />
                 <Route path="/carddetail" element={<Outlet />} >
-                    <Route path=":cardId" element={<Player output={clearNoImageResults(result)} />} />
+                    <Route path=":cardId" element={<Carousel output={clearNoImageResults(result)} />} />
                 </Route>
                 <Route path="*" element={<h1>I got nothing! And you?!</h1>} />
             </Routes>

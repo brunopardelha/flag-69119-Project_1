@@ -8,10 +8,8 @@ const TopBanner = () => {
             target="_blank"
             rel="noreferrer"
         >
-            <img src={logo} alt="logo wizards of the coast" />
+            <img src={logo} alt="logo wizards of the coast" className='topbanner_img'/>
         </a>
-
-
     )
 }
 
