@@ -19,7 +19,7 @@ const SelectSearchParameter = (props) => {
     return (
         <select
             name="funcao"
-            defaultValue={searchParameter[0]}
+            defaultValue={searchParameter[1]}
             onChange={(e) => {
                 props.ChangeMe(e.target)
             }}
