@@ -2,6 +2,7 @@
   font-family: 'Gochi Hand', cursive;
 }
 
+h1,
 .user-input h1{
     color:white;
 }
@@ -10,9 +11,4 @@
     font-size: x-large;
     line-height: 3vh;
     
-}
-
-.split {
-    width: 100%;
-    margin: 20px;
 }

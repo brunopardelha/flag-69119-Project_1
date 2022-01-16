@@ -33,17 +33,7 @@
     border: 3px solid white;
 }
 
-
-
 .small_thumbs a.active > img {
     border: 2px solid gray;
     transform: scale(0.95);
-}
-
-.info {
-    color: white;
-    position: absolute;
-    bottom: 0;
-    right: 5px;
-    padding: 15px;
 }

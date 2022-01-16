@@ -79,7 +79,7 @@ const Main = () => {
                 }>
                 </Route>
                 <Route path="/searchresults" element=
-                    {result.length > 0 && <SearchResults output={clearNoImageResults(result)} number={numberNoImageResults} pages={pages} links={links} up={pagination} />}
+                    {result.length > 0 ? <SearchResults output={clearNoImageResults(result)} number={numberNoImageResults} pages={pages} links={links} up={pagination} /> : <h1>No results</h1>}
                 />
                 <Route path="/carddetail" element={<Outlet />} >
                     <Route path=":cardId" element={<Carousel output={clearNoImageResults(result)} />} />

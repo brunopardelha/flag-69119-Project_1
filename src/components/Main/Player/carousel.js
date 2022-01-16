@@ -1,4 +1,5 @@
 import '../../../styles/Main/Player/carousel.css';
+import thumbs_image from '../../../img/picturees-icon.png';
 
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -26,33 +27,34 @@ const Carousel = (props) => {
         setCurrent(current === 0 ? length - 1 : current - 1)
     }
 
+    const [thumbs, setThumbs] = useState(true);
+
     const slider = props.output.map((one, index) => {
         return (
-            <>
-                <div className={index === current ? 'slide active' : 'slide'} key={index}>
-                    <div className='card'>
-                        {index === current && (<img src={one.imageUrl} key={index} alt={one.name} className='card-detail' />)}
-                    </div>
-                    <div className='stats'>
-                        {index === current && (<CardStats data={one} />)}
-                        <div className='info'>
-                            <p>{index + 1}/{length}</p>
-                        </div>
+            <div className={index === current ? 'slide active' : 'slide'} key={one.id}>
+                <div className='card'>
+                    {index === current && (<img src={one.imageUrl} key={index} alt={one.name} className='card-detail' />)}
+                </div>
+                <div className='stats'>
+                    {index === current && (<CardStats data={one} />)}
+                    <div className='info'>
+                        <img src={thumbs_image} alt='thumbnails icon' onClick={()=> {setThumbs(thumbs ? false : true)}} />
+                        <p>{index + 1}/{length}</p>
                     </div>
                 </div>
-            </>
+            </div>
         )
     })
 
     return (
         <>
             <Previousbutton />
-            <Link to={`/carddetail/${current - 1 <= 0 ? length -1: current - 1}`}><img src={esquerda} className="esq" alt="seta esquerda" onClick={previous} key='left' /> </Link>
+            <Link to={`/carddetail/${current - 1 <= 0 ? length - 1 : current - 1}`}><img src={esquerda} className="esq" alt="seta esquerda" onClick={previous} key='left' /> </Link>
             <div className='slider'>
                 {slider}
             </div>
             <Link to={`/carddetail/${current + 1 === length ? 0 : current + 1}`}><img src={direita} className="drt" alt="seta direita" onClick={next} key='right' /> </Link>
-            <Thumbs output={props.output} changeIndex={setCurrent} length={length} />
+            {thumbs && <Thumbs output={props.output} changeIndex={setCurrent} length={length} />}
         </>
     )
 }

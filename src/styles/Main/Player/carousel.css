@@ -57,3 +57,19 @@
 .seta_drt  {
     width: 35px;
 }
+
+.info {
+    width: 100%;
+    display:flex;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    padding: 15px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info img {
+    width: 40px;
+}
