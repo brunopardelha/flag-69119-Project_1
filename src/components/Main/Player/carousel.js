@@ -1,6 +1,7 @@
 import '../../../styles/Main/Player/carousel.css';
 
 import { useState, useRef } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 import esquerda from '../../../img/arrow-left-icon.png';
 import small_esq from '../../../img/button-round-esq-icon.png';
@@ -12,7 +13,9 @@ import Previousbutton from './previousbutton';
 
 const Carousel = (props) => {
 
-    const [current, setCurrent] = useState(0);
+    let indexStart = useParams();
+
+    const [current, setCurrent] = useState(+indexStart.cardId);
     const length = props.output.length;
 
     let scrl = useRef(null);
@@ -68,18 +71,18 @@ const Carousel = (props) => {
 
     const thumbs = props.output.map((one, index) => {
         return (
-            <img src={one.imageUrl} alt={one.name} key={index} onClick={() => { setCurrent(index) }} className={index === current ? 'thumb active' : 'thumb'}></img>
+            <Link to={`/carddetail/${index}`} key={one.id} ><img src={one.imageUrl} alt={one.name} key={index} onClick={() => { setCurrent(index) }} className={index === current ? 'thumb active' : 'thumb'} /> </Link>
         )
     })
 
     return (
         <>
             <Previousbutton />
-            <img src={esquerda} className="esq" alt="seta esquerda" onClick={previous} key='left' />
+            <Link to={`/carddetail/${current}`}><img src={esquerda} className="esq" alt="seta esquerda" onClick={previous} key='left' /> </Link>
             <div className='slider'>
                 {slider}
             </div>
-            <img src={direita} className="drt" alt="seta direita" onClick={next} key='right' />
+            <Link to={`/carddetail/${current}`}><img src={direita} className="drt" alt="seta direita" onClick={next} key='right' /> </Link>
             <div className='box_container'>
                 <div className='to_left'>
                     {scrollX !== 0 && <img src={small_esq} onClick={() => slide(-100)} className='seta_esq' alt="seta esquerda" />}
@@ -88,7 +91,7 @@ const Carousel = (props) => {
                     {thumbs}
                 </div>
                 <div className='to_right'>
-                    {!scrolEnd && <img src={small_drt} onClick={() => slide(100)} className='seta_drt' alt="seta direita" />}
+                    {!scrolEnd && length > 21 && <img src={small_drt} onClick={() => slide(100)} className='seta_drt' alt="seta direita" />}
                 </div>
             </div>
         </>
