@@ -1,9 +1,12 @@
 .footer {
     font-family: 'Gochi Hand', cursive;
+    color: white;
 }
 
 .footer {
-    width: 75vw;
+    position:relative;
+    bottom:0;
+    width: 65vw;
     margin-top: 20px;
     padding: 5px;
     background-color: black;
@@ -16,10 +19,6 @@
     color: rgb(118, 133, 194);
 }
 
-.rodape h1 {
-    color: white;
-}
-
-.rodape h3 {
+.footer h3 {
     padding: 10px;
 }
