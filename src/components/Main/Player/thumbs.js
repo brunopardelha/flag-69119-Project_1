@@ -1,16 +1,12 @@
 import '../../../styles/Main/Player/thumbs.css'
 
 import { useState, useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import small_esq from '../../../img/button-round-esq-icon.png';
 import small_drt from '../../../img/button-round-drt-icon.png';
 
 const Thumbs = (props) => {
-    // start info - array das cartas
-    // function to set index (hook) - props.setCurrent - ok
-    // length do to array para display - props.length - ok
-    let current = useParams();
 
     let scrl = useRef(null);
     const [scrollX, setscrollX] = useState(0);
@@ -45,7 +41,7 @@ const Thumbs = (props) => {
 
     const thumbs = props.output.map((one, index) => {
         return (
-            <Link to={`/carddetail/${index}`} key={one.id} ><img src={one.imageUrl} alt={one.name} key={index} onClick={() => { props.changeIndex(index) }} className={index === current ? 'thumb active' : 'thumb'} /> </Link>
+            <NavLink to={`/carddetail/${index}`} key={one.id} className={({ isActive }) => isActive ? 'active' : ''}><img src={one.imageUrl} alt={one.name} key={index} onClick={() => { props.changeIndex(index) }} /> </NavLink>
         )
     })
 

@@ -19,7 +19,7 @@ const Carousel = (props) => {
     const length = props.output.length;
 
     const next = () => {
-        setCurrent(current === length - 1 ? 0 : current + 1)
+        setCurrent(current === length - 1 ? 0 : current + 1);
     }
 
     const previous = () => {
@@ -28,30 +28,31 @@ const Carousel = (props) => {
 
     const slider = props.output.map((one, index) => {
         return (
-            <div className={index === current ? 'slide active' : 'slide'} key={index}>
-                <div className='card'>
-                    {index === current && (<img src={one.imageUrl} key={index} alt={one.name} className='card-detail' />)}
-                </div>
-                <div className='stats'>
-                    {index === current && (<CardStats data={one} />)}
-                    <div className='info'>
-                        <p>{index + 1}/{length}</p>
+            <>
+                <div className={index === current ? 'slide active' : 'slide'} key={index}>
+                    <div className='card'>
+                        {index === current && (<img src={one.imageUrl} key={index} alt={one.name} className='card-detail' />)}
+                    </div>
+                    <div className='stats'>
+                        {index === current && (<CardStats data={one} />)}
+                        <div className='info'>
+                            <p>{index + 1}/{length}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         )
     })
 
     return (
         <>
             <Previousbutton />
-            <Link to={`/carddetail/${current}`}><img src={esquerda} className="esq" alt="seta esquerda" onClick={previous} key='left' /> </Link>
+            <Link to={`/carddetail/${current - 1 <= 0 ? length -1: current - 1}`}><img src={esquerda} className="esq" alt="seta esquerda" onClick={previous} key='left' /> </Link>
             <div className='slider'>
                 {slider}
             </div>
-            <Link to={`/carddetail/${current}`}><img src={direita} className="drt" alt="seta direita" onClick={next} key='right' /> </Link>
-            <Thumbs output={props.output} changeIndex={setCurrent} length={length}/>
-
+            <Link to={`/carddetail/${current + 1 === length ? 0 : current + 1}`}><img src={direita} className="drt" alt="seta direita" onClick={next} key='right' /> </Link>
+            <Thumbs output={props.output} changeIndex={setCurrent} length={length} />
         </>
     )
 }

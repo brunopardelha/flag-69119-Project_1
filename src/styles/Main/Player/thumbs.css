@@ -20,6 +20,12 @@
     height: 0;
 }
 
+.small_thumbs {
+    width: 95%;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+}
 
 .small_thumbs img {
     width: 85px;
@@ -28,14 +34,8 @@
 }
 
 
-.small_thumbs {
-    width: 95%;
-    overflow: hidden;
-    text-align: center;
-    margin: auto;
-}
 
-.thumb.active {
+.small_thumbs a.active > img {
     border: 2px solid gray;
     transform: scale(0.95);
 }
